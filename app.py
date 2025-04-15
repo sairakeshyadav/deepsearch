@@ -10,7 +10,7 @@ load_dotenv()
 # Initialize clients
 client = InferenceClient(
     provider="novita",
-    api_key=os.getenv("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"),
+    api_key=os.getenv("HF_TOKEN"),
     bill_to="huggingface"
 )
 
