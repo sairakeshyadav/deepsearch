@@ -5,9 +5,7 @@ from dotenv import load_dotenv
 from tavily import TavilyClient
 from tavily import TavilyClient
 
-# Initialize the Tavily client with the loaded API key
-tavily_client = TavilyClient(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)
-
+export TAVILY_API_KEY="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"
 
 
 # Load environment variables from .env file
