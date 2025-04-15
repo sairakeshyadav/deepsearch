@@ -4,6 +4,23 @@ from huggingface_hub import InferenceClient
 from dotenv import load_dotenv
 from tavily import TavilyClient
 
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Retrieve API keys from environment variables
+hf_api_key = os.getenv("HF_API_KEY")
+tvly_api_key = os.getenv("TVLY_API_KEY")
+
+# Check if the keys are loaded properly (optional, but useful for debugging)
+if not hf_api_key:
+    raise ValueError("Hugging Face API key is missing")
+if not tvly_api_key:
+    raise ValueError("Tavily API key is missing")
+
+# Now you can use these API keys in your client initialization
+
+
 # Load environment variables
 load_dotenv()
 
