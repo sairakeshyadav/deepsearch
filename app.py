@@ -14,7 +14,7 @@ client = InferenceClient(
     bill_to="huggingface"
 )
 
-tavily_client = TavilyClient(api_key=os.getenv("TVLY_API_KEY"))
+tavily_client = TavilyClient(api_key=os.getenv("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"))
 
 def get_web_context(query):
     """
