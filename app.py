@@ -7,7 +7,7 @@ from tavily import TavilyClient
 
 
 # Load environment variables from .env file
-load_dotenv(.env)
+load_dotenv('.env')
 
 # Retrieve API keys from environment variables
 hf_api_key = os.getenv("HF_API_KEY")
