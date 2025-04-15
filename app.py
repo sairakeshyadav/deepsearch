@@ -4,34 +4,17 @@ from huggingface_hub import InferenceClient
 from dotenv import load_dotenv
 from tavily import TavilyClient
 
-
-
-# Load environment variables from .env file
-load_dotenv('.env')
-
-# Retrieve API keys from environment variables
-hf_api_key = os.getenv("HF_API_KEY")
-tvly_api_key = os.getenv("TVLY_API_KEY")
-
-# Check if the keys are loaded properly (optional, but useful for debugging)
-if not hf_api_key:
-    raise ValueError("Hugging Face API key is missing")
-if not tvly_api_key:
-    raise ValueError("Tavily API key is missing")
-
-# Now you can use these API keys in your client initialization
-
-
 # Load environment variables
 load_dotenv()
 
 # Initialize clients
 client = InferenceClient(
     provider="novita",
-    api_key=os.getenv("HF_TOKEN"),
+    api_key=os.getenv("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"),
     bill_to="huggingface"
 )
 
+tavily_client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
 def get_web_context(query):
     """
@@ -103,9 +86,10 @@ with gr.Blocks(title="DeepSearch - AI Search Assistant") as demo:
     chatbot = gr.ChatInterface(
         fn=chat,
         examples=[
-            "What is the capital of France?",
-            "Explain quantum computing in simple terms",
-            "Write a short poem about artificial intelligence"
+            {"role": "user", "content": "What is the capital of France?"},
+            {"role": "assistant", "content": "Paris"},
+            {"role": "user", "content": "Explain quantum computing in simple terms"},
+            {"role": "assistant", "content": "Quantum computing is..."},
         ],
         title="DeepSearch",
         description="Ask me anything, powered by Hugging Face Inference Providers",
@@ -113,4 +97,4 @@ with gr.Blocks(title="DeepSearch - AI Search Assistant") as demo:
     )
 
 if __name__ == "__main__":
-    demo.launch(share=True) 
+    demo.launch(share=True)
