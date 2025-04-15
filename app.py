@@ -3,7 +3,7 @@ import gradio as gr
 from huggingface_hub import InferenceClient
 from dotenv import load_dotenv
 from tavily import TavilyClient
-from tavily import TavilyClient
+
 
 
 # Load environment variables from .env file
@@ -32,7 +32,6 @@ client = InferenceClient(
     bill_to="huggingface"
 )
 
-tavily_client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
 def get_web_context(query):
     """
