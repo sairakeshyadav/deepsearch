@@ -10,11 +10,11 @@ load_dotenv()
 # Initialize clients
 client = InferenceClient(
     provider="novita",
-    api_key=os.getenv("HF_TOKEN"),
+    api_key=os.getenv("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"),
     bill_to="huggingface"
 )
 
-tavily_client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
+tavily_client = TavilyClient(api_key=os.getenv("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"))
 
 def get_web_context(query):
     """
