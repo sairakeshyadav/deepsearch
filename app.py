@@ -9,7 +9,7 @@ export TAVILY_API_KEY="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"
 
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv(.env)
 
 # Retrieve API keys from environment variables
 hf_api_key = os.getenv("HF_API_KEY")
